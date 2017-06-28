@@ -12,21 +12,25 @@ import React, { Component } from "react";
 class SearchBar extends Component {
     constructor(props) {
         super(props);
-
-        this.state = { term: this.props.keyVal };
     }
 
     render() {
 
         return (
             <div className="search-bar">
-                <input onChange={event =>
-                    this.setState({ term: event.target.value })
-                } />
+                <input onChange={(event) => this.onChangeSearchBar(event.target.value)} />
                 <br />
             </div>
 
         );
+    }
+
+    onChangeSearchBar(value) {
+
+        if (!value) {
+            return;
+        }
+        this.props.onSearchTermChange(value);
     }
 }
 
