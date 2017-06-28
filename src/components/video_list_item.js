@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-const VideoListItem = ({ video }) => {
+const VideoListItem = ({ video, onVideoSelected }) => {
 
 
     return (
-        <li className="list-group-item">
+        <li onClick={() => onVideoSelected(video)} className="list-group-item">
             <div className="video-list media">
 
                 <div className="media-left">
